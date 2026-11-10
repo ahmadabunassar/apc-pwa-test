@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>APC PWA Test</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0b5394">
+
+  <!-- iPhone specific -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="APC Test">
+  <link rel="apple-touch-icon" href="/icons/icon-180.png">
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>APC PWA Test</h1>
+    <span id="net" class="badge">…</span>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1. Install status</h2>
+      <p id="mode"></p>
+      <div id="iosHint" class="hint" hidden>
+        On iPhone: open this page in <b>Safari</b> → tap <b>Share</b> ⬆️ → <b>Add to Home Screen</b>.
+      </div>
+      <button id="installBtn" hidden>Install app</button>
+    </section>
+
+    <section class="card">
+      <h2>2. Talk to my server</h2>
+      <button id="pingBtn">Ping server</button>
+      <pre id="pingOut">—</pre>
+    </section>
+
+    <section class="card">
+      <h2>3. Notes (saved on server)</h2>
+      <form id="noteForm">
+        <input id="noteText" placeholder="Write a note…" maxlength="500" autocomplete="off">
+        <button>Add</button>
+      </form>
+      <ul id="notes"></ul>
+    </section>
+
+    <section class="card">
+      <h2>4. Camera test</h2>
+      <label class="filebtn">📷 Take photo
+        <input id="cam" type="file" accept="image/*" capture="environment" hidden>
+      </label>
+      <img id="preview" alt="" hidden>
+    </section>
+  </main>
+
+  <footer>Version 1 · works offline after first load</footer>
+  <script src="/app.js"></script>
+</body>
+</html>
